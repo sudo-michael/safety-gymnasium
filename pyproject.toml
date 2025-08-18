@@ -8,7 +8,7 @@ build-backend = "setuptools.build_meta"
 name = "safety-gymnasium"
 description = "A highly scalable and customizable safe reinforcement learning environment."
 readme = "README.md"
-requires-python = ">= 3.8"
+requires-python = "~= 3.10"
 authors = [{ name = "Safety-Gymnasium Contributors" }]
 license = { text = "Apache License, Version 2.0" }
 keywords = ["Safe Reinforcement Learning", "RL Environment", "MuJoCo"]
@@ -26,9 +26,9 @@ classifiers = [
 ]
 dependencies = [
     "gymnasium == 0.28.1",
-    "gymnasium-robotics == 1.2.2",
-    "pygame == 2.1.2",
-    "mujoco == 2.3.3",
+    # "gymnasium-robotics == 1.2.2", only used for multi agent envs. disabling to allow easy installation on compute canada
+    # "pygame == 2.1.2", disabling to allow easy installation on compute canada
+    "mujoco == 2.3.6",
     "xmltodict >= 0.13.0",
     "pyyaml >= 6.0",
     "imageio >= 2.27.0",
