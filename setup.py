@@ -22,8 +22,7 @@ from setuptools import setup
 
 
 HERE = pathlib.Path(__file__).absolute().parent
-VERSION_FILE = HERE / 'safety_gymnasium' / 'version.py'
-
+VERSION_FILE = HERE / "safety_gymnasium" / "version.py"
 sys.path.insert(0, str(VERSION_FILE.parent))
 import version  # noqa
 
@@ -33,23 +32,23 @@ VERSION_CONTENT = None
 try:
     if not version.__release__:
         try:
-            VERSION_CONTENT = VERSION_FILE.read_text(encoding='utf-8')
+            VERSION_CONTENT = VERSION_FILE.read_text(encoding="utf-8")
             VERSION_FILE.write_text(
                 data=re.sub(
                     r"""__version__\s*=\s*('[^']+'|"[^"]+")""",
-                    f'__version__ = {version.__version__!r}',
+                    f"__version__ = {version.__version__!r}",
                     string=VERSION_CONTENT,
                 ),
-                encoding='utf-8',
+                encoding="utf-8",
             )
         except OSError:
             VERSION_CONTENT = None
 
     setup(
-        name='safety-gymnasium',
+        name="safety-gymnasium",
         version=version.__version__,
     )
 finally:
     if VERSION_CONTENT is not None:
-        with VERSION_FILE.open(mode='wt', encoding='utf-8', newline='') as file:
+        with VERSION_FILE.open(mode="wt", encoding="utf-8", newline="") as file:
             file.write(VERSION_CONTENT)
