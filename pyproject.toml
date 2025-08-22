@@ -25,7 +25,7 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 dependencies = [
-    "gymnasium == 0.28.1",
+    "gymnasium == 0.29.0", # bump from 28.1 to fix support mujoco >= 2.3.3; onyl Hopper & Walker2D models changed
     # "gymnasium-robotics == 1.2.2", only used for multi agent envs. disabling to allow easy installation on compute canada
     # "pygame == 2.1.2", disabling to allow easy installation on compute canada
     "mujoco == 2.3.6",
