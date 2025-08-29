@@ -28,7 +28,7 @@ dependencies = [
     "gymnasium == 0.29.0", # bump from 28.1 to fix support mujoco >= 2.3.3; onyl Hopper & Walker2D models changed
     # "gymnasium-robotics == 1.2.2", only used for multi agent envs. disabling to allow easy installation on compute canada
     # "pygame == 2.1.2", disabling to allow easy installation on compute canada
-    "mujoco == 2.3.6",
+    "mujoco == 3.1.6",
     "xmltodict >= 0.13.0",
     "pyyaml >= 6.0",
     "imageio >= 2.27.0",
