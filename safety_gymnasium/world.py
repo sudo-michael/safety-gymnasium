@@ -173,7 +173,7 @@ class World:  # pylint: disable=too-many-instance-attributes
         with open(os.path.join(BASE_DIR, 'configs/assets.yaml'), encoding='utf-8') as file:
             assets_config = yaml.load(file, Loader=yaml.FullLoader)  # noqa: S506
 
-        texture.append(assets_config['textures']['skybox'])
+        # texture.append(assets_config['textures']['skybox'])
 
         if self.floor_type == 'mat':  # pylint: disable=no-member
             texture.append(assets_config['textures']['matplane'])
@@ -407,6 +407,7 @@ class World:  # pylint: disable=too-many-instance-attributes
         # Instantiate simulator
         # print(xmltodict.unparse(self.xml, pretty=True))
         self.xml_string = xmltodict.unparse(self.xml)
+        breakpoint()
         model = mujoco.MjModel.from_xml_string(self.xml_string)  # pylint: disable=no-member
         data = mujoco.MjData(model)  # pylint: disable=no-member
 
